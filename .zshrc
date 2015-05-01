@@ -1,3 +1,5 @@
+echo ZSHRC
+set -x
 for file in $HOME/.zsh/autoload/pre/*.zsh(.N); do
     source "${file}"
 done
