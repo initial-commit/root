@@ -18,8 +18,8 @@ function start_versioning() {
 #             - the commit message
 function commit_all() {
     pushd "$1" > /dev/null
-    if [[ -d './.git' && -z $(git status --porcelain) ]]; then
-        git add .
+    if [[ -d './.git' && ! -z $(git status --porcelain) ]]; then
+        git add -A .
         git commit -m "$2"
     fi
     popd > /dev/null
